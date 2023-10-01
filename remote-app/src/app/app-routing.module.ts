@@ -1,22 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {FlightsSearchComponent} from "./flights/flights-search/flights-search.component";
+import {FlightsModule} from "./flights/flights.module";
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'flights-search',
     pathMatch: "full"
-  },
-  {
-    path: 'flights-search',
-    component: FlightsSearchComponent,
-    pathMatch: "full"
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),FlightsModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
