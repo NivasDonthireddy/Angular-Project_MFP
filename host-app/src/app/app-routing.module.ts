@@ -9,6 +9,11 @@ const routes: Routes = [
     pathMatch: "full"
   },
   {
+    path: 'landing',
+    loadComponent: () => import("remote-app/LandingComponent").then(m => m.LandingComponent),
+    pathMatch: 'full'
+  },
+  {
     path: 'flights',
     loadChildren: () => import("remote-app/FlightsModule").then(m => m.FlightsModule)
   },
